@@ -1,5 +1,7 @@
 # Git Workshop
 
+* [Basics](BASICS.md)
+
 ## Contributing
 
 * [Fork](https://help.github.com/articles/fork-a-repo)
