@@ -9,6 +9,7 @@ Teacher and student actions are indicated in bold.
 * [Cloning](#cloning)
 * [Making and staging changes](#making-and-staging-changes)
 * [Committing](#committing)
+* [Rebasing](#rebasing)
 
 ## Setup
 
@@ -25,6 +26,9 @@ Create a repo named `<WORKSHOP>`, give all students push access.
 # This information will be immutably included into every commit you make.
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
+
+# Set up this alias for the workshop.
+git alias graph "log --pretty=oneline --graph --decorate --all"
 ```
 
 ## Cloning
@@ -45,7 +49,7 @@ git clone git@github.com:lotaris/<WORKSHOP>.git
 git status
 
 # Create a text file named after your username.
-echo 'The quick brown fox jumps over the lazy dog' > <USERNAME>.txt
+echo "The quick brown fox jumps over the lazy dog." > <USERNAME>.txt
 
 # You have changed the "working directory". The change is untracked.
 git status
@@ -76,11 +80,64 @@ git diff --cached
 git pull
 
 # Commit your staged changes. The -m option sets the commit message.
-git commit -m "My file."
+git commit -m "I am <USERNAME>."
 
 # Push your changes to the remote repo.
 git push
 
 # The working directory and index are now clean.
 git status
+```
+
+## Rebasing
+
+**All students...**
+
+```bash
+# Update your local repo.
+git pull
+
+# See everyone's commits in the log.
+git log
+
+# Make a change in your file.
+echo "Quizzical twins proved my hijack-bug fix." >> <USERNAME>.txt
+
+# Add and commit it.
+git commit -a -m "Updated <USERNAME>.txt"
+```
+
+**Teacher...**
+
+```bash
+# Clone the workshop repository.
+git clone git@github.com:lotaris/<WORKSHOP>.git
+
+# Create a text file named after your username.
+echo "The quick brown fox jumps over the lazy dog." > <USERNAME>.txt
+
+# Add and commit it.
+git commit -a -m "I am <USERNAME>."
+
+# Push your changes.
+git push
+```
+
+**Each student in turn...**
+
+```bash
+# Try to push your change.
+# This will fail because you are not up to date with the remote repo.
+git push
+
+# You can fetch the changes of the remote repo (without applying them).
+git fetch
+
+# Using the alias we defined at the beginning,
+# the log will show you the changes in the remote repo.
+git graph
+
+# You have not pushed your commit yet, so you can still change it to follow the remote repo's history.
+# It is called "rebasing" your commit. Your commit is re-applied after the existing history.
+git rebase origin/master
 ```
