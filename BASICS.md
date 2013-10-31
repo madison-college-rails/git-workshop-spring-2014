@@ -38,7 +38,7 @@ git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 
 # Set up this alias for the workshop.
-git alias graph "log --pretty=oneline --graph --decorate --all"
+git config --global alias.graph "log --pretty=oneline --graph --decorate --all"
 
 # You can see all your configuration in the following file.
 cat ~/.gitconfig
