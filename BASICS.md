@@ -11,12 +11,17 @@ Teacher and student actions are indicated in bold.
 * [Remotes](#remotes)
 * [Committing](#committing)
 * [Rebasing](#rebasing)
+* [Branching](#branching)
+
+
 
 ## Setup
 
 **Teacher...**
 
 Create a repo named `<WORKSHOP>`, give all students push access.
+
+
 
 ## Configuration
 
@@ -32,6 +37,8 @@ git config --global user.email johndoe@example.com
 git alias graph "log --pretty=oneline --graph --decorate --all"
 ```
 
+
+
 ## Cloning
 
 **All students...**
@@ -40,6 +47,8 @@ git alias graph "log --pretty=oneline --graph --decorate --all"
 # Get a copy of the workshop repository.
 git clone git@github.com:lotaris/<WORKSHOP>.git
 ```
+
+
 
 ## Making and staging changes
 
@@ -87,6 +96,8 @@ git status
 git diff --cached
 ```
 
+
+
 ## Remotes
 
 **All students...**
@@ -99,6 +110,8 @@ git remote
 # You can see the URLs of remotes with the verbose option.
 git remote -v
 ```
+
+
 
 ## Committing
 
@@ -117,6 +130,8 @@ git push origin master
 # The working directory and index are now clean.
 git status
 ```
+
+
 
 ## Rebasing
 
@@ -175,4 +190,21 @@ git graph
 
 # And you can push it.
 git push origin master
+```
+
+
+
+## Branching
+
+**All students...**
+
+```bash
+# Use the branch command to list branches and see which one you are on.
+# By convention, the default branch is the "master" branch.
+git branch
+
+# Create a new branch.
+git branch <USERNAME>-branch
+
+echo "Twelve ziggurats quickly jumped a finch box." >> <USERNAME>.txt
 ```
