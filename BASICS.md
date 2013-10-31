@@ -13,6 +13,7 @@ Teacher and student actions are indicated in bold.
 * [Rebasing](#rebasing)
 * [Branching](#branching)
 * [Merging](#merging)
+* [Conflict Resolution](#conflict-resolution)
 
 
 
@@ -369,4 +370,45 @@ git graph
 
 # You can push this commit to the remote repo.
 git push origin feature-shared
+```
+
+
+
+## Conflict Resolution
+
+**Teacher...**
+
+```bash
+# In the master branch, make a change to the first line of each student's file and push it.
+git checkout master
+git pull origin master
+vim <USERNAME>.txt
+git commit -a -m "Fixing things."
+git push origin master
+```
+
+**All students...**
+
+```bash
+# Switch back to the master branch
+git checkout master
+
+# In your file, add a word at the end of the first line. Save and commit your change.
+vim <USERNAME>.txt
+git commit -a -m "Fixing things."
+
+# Try to push it.
+# This will not work because the master branch has changed since then.
+git push origin master
+```
+
+**Each student in turn...**
+
+```bash
+# You want to get the latest changes of the master branch and rebase your commit.
+git pull --rebase
+
+# Oops. You're now in a conflicted state because your file was changed by someone else.
+# Find the conflict markers in your file and resolve the conflict.
+vim <USERNAME>.txt
 ```
