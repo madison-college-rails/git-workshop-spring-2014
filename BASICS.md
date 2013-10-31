@@ -155,7 +155,8 @@ git log
 echo "Quizzical twins proved my hijack-bug fix." >> <USERNAME>.txt
 
 # Add and commit it.
-git commit -a -m "Updated <USERNAME>"
+git add <USERNAME>.txt
+git commit -m "Updated <USERNAME>"
 ```
 
 **Teacher...**
@@ -168,7 +169,8 @@ git clone git@github.com:lotaris/<WORKSHOP>.git
 echo "Five jumping wizards hex bolty quick." > <USERNAME>.txt
 
 # Add and commit it.
-git commit -a -m "I am <USERNAME>."
+git add <USERNAME>.txt
+git commit -m "I am <USERNAME>."
 
 # Push your changes.
 git push origin master
@@ -224,7 +226,8 @@ git branch
 
 # Make a change to your file and commit it.
 echo "Twelve ziggurats quickly jumped a finch box." >> <USERNAME>.txt
-git commit -a -m "Updated <USERNAME> again."
+git add <USERNAME>.txt
+git commit -m "Updated <USERNAME> again."
 
 # You can see in the log that your branch has diverged from master.
 git graph
@@ -242,7 +245,8 @@ git checkout <USERNAME>-branch
 ```bash
 # Commit a change to your file.
 echo "Five quacking zephyrs jolt my wax bed." >> <USERNAME>.txt
-git commit -a -m "Updated my file."
+git add <USERNAME>.txt
+git commit -m "Updated my file."
 ```
 
 **Each student in turn...**
@@ -326,7 +330,8 @@ git pull origin feature-shared
 
 # Make a change to your file and commit it.
 echo "My ex pub quiz crowd gave joyful thanks." >> <USERNAME>.txt
-git commit -a -m "I changed it. Duh."
+git add <USERNAME>.txt
+git commit -m "I changed it. Duh."
 
 # Push your changes to the remote repo.
 git push origin feature-shared
@@ -339,7 +344,8 @@ git push origin feature-shared
 git checkout master
 git pull origin master
 echo "Cozy sphinx waves quart jug of bad milk." >> <USERNAME>.txt
-git commit -a -m "More pangrams."
+git add <USERNAME>.txt
+git commit -m "More pangrams."
 git push origin master
 ```
 
@@ -380,7 +386,8 @@ git push origin feature-shared
 git checkout master
 git pull origin master
 vim <USERNAME>.txt
-git commit -a -m "Fixing things."
+git add <USERNAME>.txt
+git commit -m "Fixing things."
 git push origin master
 ```
 
@@ -392,7 +399,8 @@ git checkout master
 
 # In your file, add a word at the end of the first line. Save and commit your change.
 vim <USERNAME>.txt
-git commit -a -m "Fixing things."
+git add <USERNAME>.txt
+git commit -m "Fixing things."
 
 # Try to push it.
 # This will not work because the master branch has changed since then.
@@ -428,7 +436,8 @@ git push origin master
 ```bash
 # Commit a change with a mistake in your file.
 echo "Blowzy red vixens fight for a quick jummp." >> <USERNAME>.txt
-git commit -a -m "I can't spell."
+git add <USERNAME>.txt
+git commit -m "I can't spell."
 
 # You haven't push this commit yet, so you can still fix it.
 # Fix the mistake and stage the file.
@@ -468,7 +477,8 @@ git reset --hard
 
 # Commit a change this time.
 echo "A quick chop jolted my big sexy frozen wives." >> <USERNAME>.txt
-git commit -a -m "More text."
+git add <USERNAME>.txt
+git commit -m "More text."
 
 # Let's say you know something is missing from this commit, but you're
 # not yet sure what, so you would like to cancel it and re-commit later.
