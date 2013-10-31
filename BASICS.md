@@ -411,4 +411,13 @@ git pull --rebase
 # Oops. You're now in a conflicted state because your file was changed by someone else.
 # Find the conflict markers in your file and resolve the conflict.
 vim <USERNAME>.txt
+
+# Once you're done, add the file to mark the conflict as resolved.
+git add <USERNAME>.txt
+
+# Continue rebasing.
+git rebase --continue
+
+# Push your change.
+git push origin master
 ```
