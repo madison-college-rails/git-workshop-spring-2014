@@ -2,6 +2,7 @@
 
 * [Adding Git to your shell prompt](PROMPT.md)
 * [Basics crash course](BASICS.md)
+* [Tips & Tricks](TIPS.md)
 
 ## Contributing
 
