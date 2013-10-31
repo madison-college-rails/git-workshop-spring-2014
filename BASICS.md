@@ -8,8 +8,8 @@ Teacher and student actions are indicated in bold.
 * [Configuration](#configuration)
 * [Cloning](#cloning)
 * [Making and staging changes](#making-and-staging-changes)
-* [Committing](#committing)
 * [Remotes](#remotes)
+* [Committing](#committing)
 * [Rebasing](#rebasing)
 
 ## Setup
@@ -87,6 +87,19 @@ git status
 git diff --cached
 ```
 
+## Remotes
+
+**All students...**
+
+```bash
+# "Remotes" are other repositories that you can synchronize with.
+# The "origin" remote was automatically added when you cloned.
+git remote
+
+# You can see the URLs of remotes with the verbose option.
+git remote -v
+```
+
 ## Committing
 
 **Each student in turn...**
@@ -103,19 +116,6 @@ git push origin master
 
 # The working directory and index are now clean.
 git status
-```
-
-## Remotes
-
-**All students...**
-
-```bash
-# "Remotes" are other repositories that you can synchronize with.
-# The "origin" remote was automatically added when you cloned.
-git remote
-
-# You can see the URLs of remotes with the verbose option.
-git remote -v
 ```
 
 ## Rebasing
