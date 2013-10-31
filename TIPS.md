@@ -2,6 +2,8 @@
 
 * [Aliases](#aliases)
 * [Log](#log)
+* [Stashing](#stashing)
+* [Interactive Add](#interactive-add)
 
 
 
@@ -29,10 +31,10 @@ cat ~/.gitconfig
 
 ## Log
 
+The log command has a plethora of options to select which commits to log and to customize its output.
+
 ```bash
-# The log command has a plethora of options to select
-# which commits to log and to customize its output.
-# For example, this shows the log with full diffs:
+# This shows the log with full diffs:
 git log --patch
 
 # This shows the log with one line per commit, which is more readable.
@@ -49,4 +51,62 @@ git log --pretty=oneline --decorate --all
 
 # This shows a graph of commits on all branches with branch markers.
 git log --pretty=oneline --graph --decorate --all
+```
+
+
+
+## Stashing
+
+```bash
+# If you have uncommitted changes on a branch and you need to switch
+# to another branch, you can "stash" these changes into a temporary workspace.
+git stash
+
+# Your working tree and index are now clean and you can switch branches.
+git checkout other-branch
+
+# Once you're done with your work, switch back to the original branch.
+git checkout original-branch
+
+# Re-apply stashed changes.
+git stash apply
+```
+
+
+
+## Interactive Add
+
+Commit an `interactive.txt` file with this content:
+
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris id ullamcorper nisi.
+
+Morbi consequat erat in ipsum condimentum varius.
+Vivamus eu ullamcorper nisl.
+Cras non bibendum dolor.
+
+Nam tempus lobortis quam vitae sagittis.
+Vestibulum sed est vitae tellus malesuada facilisis et ac nunc.
+Curabitur lobortis ante non dapibus luctus.
+```
+
+```bash
+# Make one change in each paragraph of the file.
+vim interactive.txt
+
+# Let's say some of these changes are related to one feature,
+# while others are related to a bugfix, and you'd like to commit
+# them separately.
+# You can interactively add parts of your changes with the --patch option.
+git add --patch interactive.txt
+
+# Git will show you a diff of each change which you can accept with `y` or reject with `n`.
+# If the selected change is too big and you would like to split it, type `s` and it will
+# ask you again with smaller parts of the change.
+# Make the first commit when you're done selecting your changes.
+git commit -m "Feature."
+
+# Then you can add the rest of the changes and commit the bugfix.
+git commit -a -m "Bugfix."
 ```
