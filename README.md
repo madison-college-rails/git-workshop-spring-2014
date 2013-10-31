@@ -1,8 +1,8 @@
 # Git Workshop
 
-* [Adding Git to your shell prompt](PROMPT.md)
 * [Basics crash course](BASICS.md)
 * [Tips & Tricks](TIPS.md)
+* [Powering up your shell](SHELL.md)
 
 ## Useful Resources
 
