@@ -51,7 +51,7 @@ git status
 # Create a text file named after your username.
 echo "The quick brown fox jumps over the lazy dog." > <USERNAME>.txt
 
-# You have changed the "working directory". The change is untracked.
+# You have changed the "working tree". The change is untracked.
 git status
 
 # Show a diff of your untracked changes.
@@ -60,7 +60,7 @@ git diff
 # Add the file.
 git add <USERNAME>.txt
 
-# You have updated the "index" with the content of the working directory.
+# You have updated the "index" with the content of the working tree.
 # The file is now "staged" for the next commit.
 git status
 
@@ -68,6 +68,21 @@ git status
 git diff
 
 # To see the changes staged for the next commit, use the --cached option.
+git diff --cached
+
+# Make a change in your file.
+echo "Fix problem quickly with galvanized jets." >> <USERNAME>.txt
+
+# Your new changes are untracked.
+git status
+git diff
+
+# The index still contains the first version of the file you staged earlier.
+git diff --cached
+
+# To include the new file in the next commit, you must stage it.
+git add <USERNAME>.txt
+git status
 git diff --cached
 ```
 
@@ -77,16 +92,27 @@ git diff --cached
 
 ```bash
 # Update your local repo.
-git pull
+git pull origin master
 
 # Commit your staged changes. The -m option sets the commit message.
 git commit -m "I am <USERNAME>."
 
 # Push your changes to the remote repo.
-git push
+git push origin master
 
 # The working directory and index are now clean.
 git status
+```
+
+## Remotes
+
+**All students...**
+
+```bash
+# "Remotes" are other repositories that you can synchronize with.
+git remote
+
+# The "origin" remote was automatically set to the URL of the repo you cloned from.
 ```
 
 ## Rebasing
@@ -95,7 +121,7 @@ git status
 
 ```bash
 # Update your local repo.
-git pull
+git pull origin master
 
 # See everyone's commits in the log.
 git log
@@ -120,7 +146,7 @@ echo "The quick brown fox jumps over the lazy dog." > <USERNAME>.txt
 git commit -a -m "I am <USERNAME>."
 
 # Push your changes.
-git push
+git push origin master
 ```
 
 **Each student in turn...**
@@ -128,10 +154,10 @@ git push
 ```bash
 # Try to push your change.
 # This will fail because you are not up to date with the remote repo.
-git push
+git push origin master
 
 # You can fetch the changes of the remote repo (without applying them).
-git fetch
+git fetch origin
 
 # Using the alias we defined at the beginning,
 # the log will show you the changes in the remote repo.
@@ -140,4 +166,10 @@ git graph
 # You have not pushed your commit yet, so you can still change it to follow the remote repo's history.
 # It is called "rebasing" your commit. Your commit is re-applied after the existing history.
 git rebase origin/master
+
+# Your commit now follows the remote repo's history.
+git graph
+
+# And you can push it.
+git push origin master
 ```
