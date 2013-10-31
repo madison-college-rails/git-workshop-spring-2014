@@ -14,6 +14,7 @@ Teacher and student actions are indicated in bold.
 * [Branching](#branching)
 * [Merging](#merging)
 * [Conflict Resolution](#conflict-resolution)
+* [Amending Commits](#amending-commits)
 
 
 
@@ -420,4 +421,28 @@ git rebase --continue
 
 # Push your change.
 git push origin master
+```
+
+
+
+## Amending Commits
+
+**All students...**
+
+```bash
+# Commit a change with a mistake in your file.
+echo "Blowzy red vixens fight for a quick jummp." >> <USERNAME>.txt
+git commit -a -m "I can't spell."
+
+# You haven't push this commit yet, so you can still fix it.
+# Fix the mistake and stage the file.
+vim <USERNAME>.txt
+git add <USERNAME>.txt
+
+# Then "amend" the last commit.
+# Your commit is now fixed, ready to be pushed.
+git commit --amend -m "More texxt."
+
+# If you made a mistake in the commit message, you can also fix just that.
+git commit --amend -m "More text."
 ```
