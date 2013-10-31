@@ -16,5 +16,6 @@ git alias ci commit
 cat ~/.gitconfig
 ```
 
-Sample gitconfig files:
-* https://github.com/AlphaHydrae/env/blob/master/.gitconfig
+* [Pro Git - Customizing Git](http://git-scm.com/book/ch7-1.html)
+* [Git Config Reference](https://www.kernel.org/pub/software/scm/git/docs/git-config.html)
+* [Sample Git Config](https://github.com/AlphaHydrae/env/blob/master/.gitconfig)
