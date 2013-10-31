@@ -84,8 +84,8 @@ git status
 # Staged changes are not shown by the standard diff command.
 git diff
 
-# To see the changes staged for the next commit, use the --cached option.
-git diff --cached
+# To see the changes staged for the next commit, use the --staged option.
+git diff --staged
 
 # Make a change in your file.
 echo "Fix problem quickly with galvanized jets." >> <USERNAME>.txt
@@ -95,12 +95,12 @@ git status
 git diff
 
 # The index still contains the first version of the file you staged earlier.
-git diff --cached
+git diff --staged
 
 # To include the new file in the next commit, you must stage it.
 git add <USERNAME>.txt
 git status
-git diff --cached
+git diff --staged
 ```
 
 
@@ -496,5 +496,5 @@ git reset HEAD~1
 # This will apply the state of the previous commit to the working tree and index.
 # You can commit this and push it to the remote repo to cancel your change.
 git status
-git diff --cached
+git diff --staged
 ```
