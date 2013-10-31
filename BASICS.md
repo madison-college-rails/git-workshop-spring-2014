@@ -280,11 +280,6 @@ git push origin master
 ```bash
 # Now that your branch has been merged into master, you can delete it.
 git branch -d <USERNAME>-branch
-
-# Also delete it from the remote repo.
-# The syntax is "push <remote> <source>:<target>".
-# Here you're pushing nothing (source) into the branch (target), which will delete it.
-git push origin :<USERNAME>-branch
 ```
 
 **All students...**
