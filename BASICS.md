@@ -35,6 +35,9 @@ git config --global user.email johndoe@example.com
 
 # Set up this alias for the workshop.
 git alias graph "log --pretty=oneline --graph --decorate --all"
+
+# You can see all your configuration in the following file.
+cat ~/.gitconfig
 ```
 
 
@@ -148,7 +151,7 @@ git log
 echo "Quizzical twins proved my hijack-bug fix." >> <USERNAME>.txt
 
 # Add and commit it.
-git commit -a -m "Updated <USERNAME>.txt"
+git commit -a -m "Updated <USERNAME>"
 ```
 
 **Teacher...**
@@ -206,5 +209,39 @@ git branch
 # Create a new branch.
 git branch <USERNAME>-branch
 
+# Switch to your branch.
+git checkout <USERNAME>-branch
+
+# Check that you are on the right branch.
+git branch
+
+# Make a change to your file and commit it.
 echo "Twelve ziggurats quickly jumped a finch box." >> <USERNAME>.txt
+git commit -a -m "Updated <USERNAME> again."
+
+# You can see in the log that your branch has diverged from master.
+git graph
+
+# Switch between branches with the checkout command.
+# This updates the working directory with the state of that branch.
+git checkout master
+
+# Go back to your branch.
+git checkout <USERNAME>-branch
+
+# You can push your branch to the remote repo to share it with others.
+git push origin <USERNAME>-branch
+```
+
+**All students...**
+
+```bash
+# Fetch all branches from the remote repo.
+git fetch origin
+
+# You can see all the branches that were pushed.
+git branch -a
+
+# Check the log.
+git graph
 ```
