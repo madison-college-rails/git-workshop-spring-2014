@@ -7,7 +7,7 @@
 ## Useful Resources
 
 * [Pro Git Book](http://git-scm.com/book)
-* [Linus Torvalds on Git](http://www.youtube.com/watch?v=4XpnKHJAok8)
+* [Linus Torvalds on Git](http://www.youtube.com/watch?v=4XpnKHJAok8) (entertaining)
 * [Interactive Git Tutorial](http://try.github.io/)
 
 ## Contributing
