@@ -9,6 +9,7 @@ Teacher and student actions are indicated in bold.
 * [Cloning](#cloning)
 * [Making and staging changes](#making-and-staging-changes)
 * [Committing](#committing)
+* [Remotes](#remotes)
 * [Rebasing](#rebasing)
 
 ## Setup
@@ -110,9 +111,11 @@ git status
 
 ```bash
 # "Remotes" are other repositories that you can synchronize with.
+# The "origin" remote was automatically added when you cloned.
 git remote
 
-# The "origin" remote was automatically set to the URL of the repo you cloned from.
+# You can see the URLs of remotes with the verbose option.
+git remote -v
 ```
 
 ## Rebasing
@@ -126,7 +129,7 @@ git pull origin master
 # See everyone's commits in the log.
 git log
 
-# Make a change in your file.
+# Make a change to your file.
 echo "Quizzical twins proved my hijack-bug fix." >> <USERNAME>.txt
 
 # Add and commit it.
