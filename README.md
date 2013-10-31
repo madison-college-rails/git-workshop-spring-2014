@@ -1,6 +1,7 @@
 # Git Workshop
 
-* [Basics](BASICS.md)
+* [Adding Git to your shell prompt](PROMPT.md)
+* [Basics crash course](BASICS.md)
 
 ## Contributing
 
