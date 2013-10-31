@@ -4,6 +4,13 @@
 * [Basics crash course](BASICS.md)
 * [Tips & Tricks](TIPS.md)
 
+## Useful Resources
+
+
+
+
+* [Linus Torvalds on Git](http://www.youtube.com/watch?v=4XpnKHJAok8)
+
 ## Contributing
 
 * [Fork](https://help.github.com/articles/fork-a-repo)
