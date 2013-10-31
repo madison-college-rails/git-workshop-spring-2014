@@ -12,6 +12,7 @@ Teacher and student actions are indicated in bold.
 * [Committing](#committing)
 * [Rebasing](#rebasing)
 * [Branching](#branching)
+* [Merging](#merging)
 
 
 
@@ -161,7 +162,7 @@ git commit -a -m "Updated <USERNAME>"
 git clone git@github.com:lotaris/<WORKSHOP>.git
 
 # Create a text file named after your username.
-echo "The quick brown fox jumps over the lazy dog." > <USERNAME>.txt
+echo "Five jumping wizards hex bolty quick." > <USERNAME>.txt
 
 # Add and commit it.
 git commit -a -m "I am <USERNAME>."
@@ -199,6 +200,9 @@ git push origin master
 
 ## Branching
 
+You are going to work in a separate branch and push that work to the remote repository.
+Once that's done, you will merge your changes back into the master branch.
+
 **All students...**
 
 ```bash
@@ -228,9 +232,79 @@ git checkout master
 
 # Go back to your branch.
 git checkout <USERNAME>-branch
+```
 
-# You can push your branch to the remote repo to share it with others.
-git push origin <USERNAME>-branch
+**Teacher...**
+
+```bash
+# Commit a change to your file.
+echo "Five quacking zephyrs jolt my wax bed." >> <USERNAME>.txt
+git commit -a -m "Updated my file."
+```
+
+**Each student in turn...**
+
+```bash
+# You're now done working in the branch.
+# You want to merge these changes back into the master branch.
+# You must make sure that your master branch is up to date first.
+# Switch to the master branch and update it from the remote repo.
+git checkout master
+git pull origin master
+
+# Switch back to your branch and rebase it on the master branch.
+git checkout <USERNAME>-branch
+git rebase master
+
+# The commit in your branch should now follow the last commit from the master branch.
+git graph
+
+# Go back to the master branch.
+git checkout master
+
+# Merge your branch into master.
+git merge <USERNAME>-branch
+
+# Your commit is now also on the master branch.
+git graph
+
+# Push the updated master branch to the remote repo.
+git push origin master
+```
+
+**All students...**
+
+```bash
+# Now that your branch has been merged into master, you can delete it.
+git branch -d <USERNAME>-branch
+
+# Also delete it from the remote repo.
+# The syntax is "push <remote> <source>:<target>".
+# Here you're pushing nothing (source) into the branch (target), which will delete it.
+git push origin :<USERNAME>-branch
+```
+
+**All students...**
+
+```bash
+# Update your local repo.
+git fetch origin
+
+# You can see that all user branches have been deleted.
+git branch -a
+```
+
+
+
+## Merging
+
+**Teacher..**
+
+```bash
+# Create a branch for everyone to work in.
+git checkout master
+git branch feature-shared
+git push origin feature-shared
 ```
 
 **All students...**
@@ -242,6 +316,57 @@ git fetch origin
 # You can see all the branches that were pushed.
 git branch -a
 
-# Check the log.
+# Switch to the shared branch.
+git checkout feature-shared
+```
+
+**Each student in turn...**
+
+```bash
+# Make sure your local copy of the branch is up to date.
+git pull origin feature-shared
+
+# Make a change to your file and commit it.
+echo "My ex pub quiz crowd gave joyful thanks." >> <USERNAME>.txt
+git commit -a -m "I changed it. Duh."
+
+# Push your changes to the remote repo.
+git push origin feature-shared
+```
+
+**Teacher (before each student)...**
+
+```bash
+# Commit a change to your file on master and push it.
+git checkout master
+git pull origin master
+echo "Cozy sphinx waves quart jug of bad milk." >> <USERNAME>.txt
+git commit -a -m "More pangrams."
+git push origin master
+```
+
+**Each student in turn...**
+
+```bash
+# You still have to work on the feature-shared branch, but it has
+# now diverged from the master branch, and you want to keep it up to date.
+# You can't rebase the commits of the branch because they have been
+# pushed; that commit history is already shared with other people.
+
+# First, make sure your master branch is up to date.
+git checkout master
+git pull origin master
+
+# Also make sure you have all the commits in the branch.
+git checkout feature-shared
+git pull origin feature-shared
+
+# You can now merge master into the branch.
+git merge master
+
+# This has created a new commit.
 git graph
+
+# You can push this commit to the remote repo.
+git push origin feature-shared
 ```
