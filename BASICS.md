@@ -15,6 +15,7 @@ Teacher and student actions are indicated in bold.
 * [Merging](#merging)
 * [Conflict Resolution](#conflict-resolution)
 * [Amending Commits](#amending-commits)
+* [Resetting Changes](#resetting-changes)
 
 
 
@@ -445,4 +446,55 @@ git commit --amend -m "More texxt."
 
 # If you made a mistake in the commit message, you can also fix just that.
 git commit --amend -m "More text."
+```
+
+
+
+## Resetting Changes
+
+**All students...**
+
+```bash
+# Make a change and stage it.
+echo "When zombies arrive, quickly fax judge Pat." >> <USERNAME>.txt
+git add <USERNAME>.txt
+
+# Make another change.
+echo "Waxy and quivering, jocks fumble the pizza." >> <USERNAME>.txt
+
+# You now have staged and untracked changes.
+git status
+
+# If you realize that what you've been doing since the last commit
+# is completely wrong and you just want to get rid of it, you can
+# reset the working tree to the last commit.
+# This operation is destructive. There is no way to cancel it.
+git reset --hard
+
+# Commit a change this time.
+echo "A quick chop jolted my big sexy frozen wives." >> <USERNAME>.txt
+git commit -a -m "More text."
+
+# Let's say you know something is missing from this commit, but you're
+# not yet sure what, so you would like to cancel it and re-commit later.
+# You can do a soft reset to the previous commit.
+git reset --soft HEAD~1
+
+# This leaves the working tree and index as they are, but moves HEAD to
+# the previous commit. Your commit doesn't exist anymore.
+# NEVER EVER do this with a commit that you have already pushed.
+git status
+
+# Commit it again.
+git commit -m "More text."
+
+# If you have pushed it, it is now part of the history so you can't
+# remove it. You have to create a new commit which cancels your change.
+# You can also do this with the reset command.
+git reset HEAD~1
+
+# This will apply the state of the previous commit to the working tree and index.
+# You can commit this and push it to the remote repo to cancel your change.
+git status
+git diff --cached
 ```
