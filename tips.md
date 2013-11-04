@@ -103,7 +103,7 @@ git commit -a -m "Bugfix."
 
 ## Additional Tools
 
-[git-extras](https://github.com/visionmedia/git-extras) is a pacakge of additional git commands.
+[git-extras](https://github.com/visionmedia/git-extras) is a package of additional git commands.
 It provides useful aliases like `alias` or `ignore`.
 It also provides commands to analyze a repo like `summary` which lists authors and the number of contributions they made.
 
