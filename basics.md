@@ -49,6 +49,7 @@ git push origin master
 ```bash
 # Set up your user name and e-mail address.
 # This information will be immutably included into every commit you make.
+# If you want different user info for a repository, omit the ``--global`` option.
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 
