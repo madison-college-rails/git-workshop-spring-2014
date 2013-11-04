@@ -510,6 +510,9 @@ git status
 # This operation is destructive. There is no way to cancel it.
 git reset --hard
 
+# Your changes are no longer there.
+git status
+
 # Commit a change this time.
 echo "A quick chop jolted my big sexy frozen wives." >> <USERNAME>.txt
 git add <USERNAME>.txt
