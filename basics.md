@@ -181,6 +181,12 @@ Not so with git: commits must follow the previous commit history even when makin
 
 ## Rebasing
 
+Sometimes your local commits will be out of date with the commit history of the remote repo.
+Someone might have committed other changes while you were working.
+If you have not pushed your commits yet, you have the option of *rebasing*.
+Rebasing is the action of re-applying the changes of your commit(s) after other commits.
+This will create new commits with different parents in the commit history.
+
 **All students...**
 
 ```bash
@@ -231,9 +237,6 @@ git push origin master
 
 
 ## Branching
-
-You are going to work in a separate branch and push that work to the remote repository.
-Once that's done, you will merge your changes back into the master branch.
 
 **All students...**
 
