@@ -1,9 +1,11 @@
 # Git Basics
 
-This workshop uses placeholders like `<USERNAME>`.
-Fill them out when typing commands.
+This workshop teaches common git operations like committing files, using branches, rebasing, merging and resolving conflicts.
+It also highlights some of the differences of git from subversion.
 
-Teacher and student actions are indicated in bold.
+The workshop is meant for one teacher and several students.
+What the teacher and students must do is indicated in bold.
+Placeholders like `<USERNAME>` must be filled out when typing commands.
 
 * [Configuration](#configuration)
 * [Cloning](#cloning)
@@ -24,6 +26,19 @@ Teacher and student actions are indicated in bold.
 **Teacher...**
 
 Create a repo named `<WORKSHOP>`, give all students push access.
+
+```bash
+# Clone the workshop repository.
+git clone git@github.com:lotaris/<WORKSHOP>.git
+
+# Commit a file named after your username.
+echo "Few black taxis drive up major roads on quiet hazy nights." > <USERNAME>.txt
+git add <USERNAME>.txt
+git commit -m "Workshop setup."
+
+# Push your changes.
+git push origin master
+```
 
 
 
@@ -102,6 +117,10 @@ git status
 git diff --staged
 ```
 
+*Note to SVN users:* the difference between the working tree and the index doesn't exist in SVN.
+Keep in mind that you must always stage your changes for them to be committed, even for files that are already tracked.
+Before committing, you should always use the `status` command so that you are sure of what is untracked and what is staged.
+
 
 
 ## Remotes
@@ -116,6 +135,10 @@ git remote
 # You can see the URLs of remotes with the verbose option.
 git remote -v
 ```
+
+*Note to SVN users:* there is no notion of centralized server in git.
+If an organization decides to use a centralized server for simplicity, that is a convention; it is not enforced by git.
+Any remote repo is indistinguishable from your own at the git level.
 
 
 
@@ -150,6 +173,10 @@ git log
 git graph
 ```
 
+*Note to SVN users:* each student committed one after the other to avoid problems.
+In SVN, these commits could have been made at any time since they affect different files.
+Not so with git: commits must follow the previous commit history even when making changes to different files.
+
 
 
 ## Rebasing
@@ -168,15 +195,9 @@ git commit -m "Updated <USERNAME>"
 **Teacher...**
 
 ```bash
-# Clone the workshop repository.
-git clone git@github.com:lotaris/<WORKSHOP>.git
-
-# Create a text file named after your username.
-echo "Five jumping wizards hex bolty quick." > <USERNAME>.txt
-
-# Add and commit it.
-git add <USERNAME>.txt
-git commit -m "I am <USERNAME>."
+# Commit a change to your file.
+echo "Five jumping wizards hex bolty quick." >> <USERNAME>.txt
+git commit -a -m "I am <USERNAME>."
 
 # Push your changes.
 git push origin master
