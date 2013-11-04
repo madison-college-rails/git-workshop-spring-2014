@@ -76,20 +76,7 @@ git stash apply
 
 ## Interactive Add
 
-Commit an `interactive.txt` file with this content:
-
-```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Mauris id ullamcorper nisi.
-
-Morbi consequat erat in ipsum condimentum varius.
-Vivamus eu ullamcorper nisl.
-Cras non bibendum dolor.
-
-Nam tempus lobortis quam vitae sagittis.
-Vestibulum sed est vitae tellus malesuada facilisis et ac nunc.
-Curabitur lobortis ante non dapibus luctus.
-```
+Download [`interactive.txt`](interactive.txt) into your repo and commit it.
 
 ```bash
 # Make one change in each paragraph of the file.
