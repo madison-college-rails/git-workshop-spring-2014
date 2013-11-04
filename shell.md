@@ -1,8 +1,8 @@
-# Adding Git to your shell prompt
+# Adding git to your shell prompt
 
 ## Bash Users
 
-Download the git-prompt script from the Git repository:
+Download the git-prompt script from the git repository:
 
     curl https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
     curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.sh
