@@ -71,9 +71,6 @@ echo "The quick brown fox jumps over the lazy dog." > <USERNAME>.txt
 # You have changed the "working tree". The change is untracked.
 git status
 
-# Show a diff of your untracked changes.
-git diff
-
 # Add the file.
 git add <USERNAME>.txt
 
@@ -92,6 +89,8 @@ echo "Fix problem quickly with galvanized jets." >> <USERNAME>.txt
 
 # Your new changes are untracked.
 git status
+
+# You can see them with the diff command.
 git diff
 
 # The index still contains the first version of the file you staged earlier.
