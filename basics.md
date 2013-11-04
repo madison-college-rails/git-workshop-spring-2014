@@ -137,10 +137,6 @@ git push origin master
 git status
 ```
 
-
-
-## Rebasing
-
 **All students...**
 
 ```bash
@@ -150,6 +146,17 @@ git pull origin master
 # See everyone's commits in the log.
 git log
 
+# See the commit history graph (with the alias we defined earlier).
+git graph
+```
+
+
+
+## Rebasing
+
+**All students...**
+
+```bash
 # Make a change to your file.
 echo "Quizzical twins proved my hijack-bug fix." >> <USERNAME>.txt
 
