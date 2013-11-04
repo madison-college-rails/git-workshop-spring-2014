@@ -400,7 +400,7 @@ git checkout feature-shared
 git pull origin feature-shared
 
 # You can now merge master into the branch.
-git merge master
+git merge -m "Merged master into feature-shared." master
 
 # This has created a new commit.
 git graph
