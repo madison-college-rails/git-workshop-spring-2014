@@ -4,6 +4,7 @@
 * [Log](#log)
 * [Stashing](#stashing)
 * [Interactive Add](#interactive-add)
+* [Additional Tools](#additional-tools)
 
 
 
@@ -97,3 +98,15 @@ git commit -m "Feature."
 # Then you can add the rest of the changes and commit the bugfix.
 git commit -a -m "Bugfix."
 ```
+
+
+
+## Additional Tools
+
+[git-extras](https://github.com/visionmedia/git-extras) is a pacakge of additional git commands.
+It provides useful aliases like `alias` or `ignore`.
+It also provides commands to analyze a repo like `summary` which lists authors and the number of contributions they made.
+
+[hub](http://hub.github.com) is a GitHub wrapper for git.
+Where previously you would write `git clone https://github.com/lotaris/git-workshop.git`, you can just write `git clone lotaris/git-workshop`.
+It also provides useful commands for forks and pull requests.
