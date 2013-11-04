@@ -14,10 +14,10 @@
 # Git has no aliases by default.
 # If you want to commit with `git ci` instead of `git commit`, for example,
 # you can use the alias command.
-git alias ci commit
+git config --global alias.ci commit
 
 # You can define more complicated aliases with options.
-git alias graph "log --oneline --graph --decorate"
+git config --global alias.graph "log --oneline --graph --decorate"
 
 # Aliases are added to your ~/.gitconfig file.
 # You can also modify this file directly.
