@@ -270,6 +270,10 @@ git checkout master
 git checkout <USERNAME>-branch
 ```
 
+*Note to SVN users:* notice that branch creation is instantaneous in git.
+That's because a branch is just a pointer to a commit.
+Switching between branches is also fast because only the differences have to be applied to the working tree.
+
 **Teacher...**
 
 ```bash
