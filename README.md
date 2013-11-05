@@ -1,7 +1,8 @@
 # Git Workshop
 
 * [Basics crash course](basics.md)
-* [Tips & Tricks](tips.md)
+* [Tips & tricks](tips.md)
+* [Advanced commands](advanced.md)
 * [Powering up your shell](shell.md)
 
 ## Useful Resources

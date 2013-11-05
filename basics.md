@@ -1,6 +1,6 @@
 # Git Basics
 
-This workshop teaches common git operations like committing files, using branches, rebasing, merging and resolving conflicts.
+This part of the workshop teaches common git operations like committing files, using branches, rebasing, merging and resolving conflicts.
 It also highlights some of the differences of git from subversion.
 
 It is recommended to at least skim through the following chapters of the
