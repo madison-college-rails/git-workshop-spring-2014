@@ -52,6 +52,13 @@ git log --pretty=oneline --decorate --all
 
 # This shows a graph of commits on all branches with branch markers.
 git log --pretty=oneline --graph --decorate --all
+
+# This logs the commits between the master and the feature branch
+# (the commits that are in feature but not in master).
+git log master..feature
+
+# This logs the commits between the master branch on origin and the local master branch.
+git log origin/master..master
 ```
 
 
