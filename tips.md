@@ -1,10 +1,22 @@
 # Tips & Tricks
 
+* [Coloring](#coloring)
 * [Aliases](#aliases)
 * [Log](#log)
 * [Stashing](#stashing)
 * [Interactive Add](#interactive-add)
 * [Additional Tools](#additional-tools)
+
+
+
+## Coloring
+
+Git can color some of its output to help you visualize things more easily.
+You can use the following command to turn on automatic terminal coloring.
+
+```bash
+git config --global color.ui true
+```
 
 
 
