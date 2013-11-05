@@ -512,7 +512,11 @@ git reset --hard
 
 # Your changes are no longer there.
 git status
+```
 
+**All students...**
+
+```bash
 # Commit a change this time.
 echo "A quick chop jolted my big sexy frozen wives." >> <USERNAME>.txt
 git add <USERNAME>.txt
@@ -527,7 +531,11 @@ git reset --soft HEAD~1
 # the previous commit. Your commit doesn't exist anymore.
 # NEVER EVER do this with a commit that you have already pushed.
 git status
+```
 
+**All students...**
+
+```bash
 # Commit it again.
 git commit -m "More text."
 
