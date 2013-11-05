@@ -29,7 +29,7 @@ git config --global color.ui true
 git config --global alias.ci commit
 
 # You can define more complicated aliases with options.
-git config --global alias.graph "log --oneline --graph --decorate"
+git config --global alias.graph "log --oneline --graph --decorate --all"
 
 # Aliases are added to your ~/.gitconfig file.
 # You can also modify this file directly.
@@ -53,16 +53,10 @@ git log --patch
 # This shows the log with one line per commit, which is more readable.
 git log --pretty=oneline
 
-# The --decorate option adds branch markers.
-git log --pretty=oneline --decorate
+# This logs one commit per line with the author name and a short date.
+git log --pretty=format:"%h %an %ad" --date=short
 
-# The --graph option shows the history of commits as an ASCII graph.
-git log --pretty=oneline --graph
-
-# The --all option shows commits from all branches, not just from the history of the current branch.
-git log --pretty=oneline --decorate --all
-
-# This shows a graph of commits on all branches with branch markers.
+# This shows an ASCII graph of commits on all branches with branch markers.
 git log --pretty=oneline --graph --decorate --all
 
 # This logs the commits between the master and the feature branch
@@ -70,6 +64,8 @@ git log --pretty=oneline --graph --decorate --all
 git log master..feature
 
 # This logs the commits between the master branch on origin and the local master branch.
+# In other words, it shows all the commits on your local master branch that have not yet
+# been pushed to the master branch of the origin remote.
 git log origin/master..master
 ```
 
