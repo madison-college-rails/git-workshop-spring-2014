@@ -7,7 +7,7 @@ Download the git-prompt script from the git repository:
     curl https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
     curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.sh
 
-Add the following to your `~/.bashrc` file (or if you already have a `PS1` customization, add it there):
+Add the following to your `~/.bash_profile` file (or if you already have a `PS1` customization, add it there):
 
 ```bash
 source ~/.git-prompt.sh
