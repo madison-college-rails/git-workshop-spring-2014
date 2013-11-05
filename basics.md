@@ -227,8 +227,11 @@ Not so with git: commits must follow the previous commit history even when makin
 
 ## Rebasing
 
-Sometimes your local commits will be out of date with the commit history of the remote repo.
-Someone might have committed other changes while you were working.
+For a remote repo to accept the commits that you push, those commits must follow the existing commit history.
+However, sometimes your local commits will be out of date with that history.
+For example, someone might have committed and pushed other changes while you were working.
+Your commits are still based on an older commit.
+
 If you have not pushed your commits yet, you have the option of *rebasing*.
 Rebasing is the action of re-applying the changes of your commit(s) after other commits.
 This will create new commits with different parents in the commit history.
@@ -262,23 +265,29 @@ git push origin master
 # This will fail because you are not up to date with the remote repo.
 git push origin master
 
-# You can fetch the changes of the remote repo (without applying them).
+# Fetch the changes from the remote repo.
 git fetch origin
 
-# Using the alias we defined at the beginning,
-# the log will show you the changes in the remote repo.
+# The commit graph will show you what has changed in the remote repo.
+# Your commit and the latest commit(s) on the remote have diverged.
 git graph
 
-# You have not pushed your commit yet, so you can still change it to follow the remote repo's history.
-# It is called "rebasing" your commit. Your commit is re-applied after the existing history.
+# You have not pushed your commit yet, so you can still move it to follow
+# the remote repo's history. It is called "rebasing" your commit.
+# You are re-applying it on top of the master branch of the origin remote.
 git rebase origin/master
 
-# Your commit now follows the remote repo's history.
+# The commit now follows the remote repo's history.
+# Notice that the commit hash has changed. The contents are the same,
+# but it is a new commit since it has a different parent.
 git graph
 
 # And you can push it.
 git push origin master
 ```
+
+*Note:* check [rebasing in the Pro Git book](http://git-scm.com/book/en/Git-Branching-Rebasing)
+for diagrams that explain rebasing.
 
 
 
