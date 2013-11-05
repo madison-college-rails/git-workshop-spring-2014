@@ -4,7 +4,11 @@ This workshop teaches common git operations like committing files, using branche
 It also highlights some of the differences of git from subversion.
 
 The workshop is meant for one teacher and several students.
+It takes about two hours and a half to complete with five students.
 What the teacher and students must do is indicated in bold.
+Instructions preceded by *Each student in turn...* must be executed one student at a time to avoid conflicts
+(or cause them when it is the purpose of the exercise).
+
 Placeholders like `<USERNAME>` must be filled out when typing commands.
 
 * [Configuration](#configuration)
