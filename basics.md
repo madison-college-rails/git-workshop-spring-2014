@@ -3,6 +3,9 @@
 This workshop teaches common git operations like committing files, using branches, rebasing, merging and resolving conflicts.
 It also highlights some of the differences of git from subversion.
 
+It is recommended to at least skim through the following chapters of the
+[Pro Git](http://git-scm.com/book) book before the workshop: 1.1, 1.3, 2.\*, 3.1, 3.2.
+
 The workshop is meant for one teacher and several students.
 It takes about two hours and a half to complete with five students.
 What the teacher and students must do is indicated in bold.
@@ -13,8 +16,8 @@ Placeholders like `<USERNAME>` must be filled out when typing commands.
 
 * [Configuration](#configuration)
 * [Cloning](#cloning)
-* [Making and staging changes](#making-and-staging-changes)
 * [Remotes](#remotes)
+* [Making and staging changes](#making-and-staging-changes)
 * [Committing](#committing)
 * [Rebasing](#rebasing)
 * [Branching](#branching)
@@ -63,6 +66,30 @@ git config --global alias.graph "log --pretty=oneline --graph --decorate --all"
 # You can see all your configuration in the following file.
 cat ~/.gitconfig
 ```
+
+
+
+## Remotes
+
+**All students...**
+
+```bash
+# "Remotes" are other repositories that you can synchronize with.
+# The "origin" remote was automatically added when you cloned.
+# It is the remote repo you cloned from.
+git remote
+
+# You can see the URLs of remotes with the verbose option.
+git remote -v
+
+# You could have defined the origin remote yourself like this.
+git remote add origin git@github.com:lotaris/<WORKSHOP>.git
+```
+
+*Note to SVN users:* the notion of centralized server doesn't exist in git.
+If an organization decides to use a centralized server,
+that is a convention; it is not enforced by git.
+Any remote repo is indistinguishable from your own at the git level.
 
 
 
@@ -131,38 +158,27 @@ so that you are sure of what is untracked and what is staged.
 
 
 
-## Remotes
-
-**All students...**
-
-```bash
-# "Remotes" are other repositories that you can synchronize with.
-# The "origin" remote was automatically added when you cloned.
-git remote
-
-# You can see the URLs of remotes with the verbose option.
-git remote -v
-```
-
-*Note to SVN users:* the notion of centralized server doesn't exist in git.
-If an organization decides to use a centralized server for simplicity,
-that is a convention; it is not enforced by git.
-Any remote repo is indistinguishable from your own at the git level.
-
-
-
 ## Committing
 
 **Each student in turn...**
 
 ```bash
-# Update your local repo.
+# You will work with branches later in this workshop,
+# but notice that you are currently on the "master" branch (by default).
+git branch
+
+# Before committing, make sure your local repo is up to date.
+# In git, you do this by "pulling" changes from the remote repo.
+# The remote we want to pull from is "origin", and we want
+# to get the commits of the "master" branch.
 git pull origin master
 
-# Commit your staged changes. The -m option sets the commit message.
+# Commit the changes you staged earlier.
+# The -m option sets the commit message.
 git commit -m "I am <USERNAME>."
 
-# Push your changes to the remote repo.
+# Now you want to share your commit with others,
+# so you "push" your changes to the remote repo.
 git push origin master
 
 # The working directory and index are now clean.
@@ -172,13 +188,31 @@ git status
 **All students...**
 
 ```bash
-# Update your local repo.
+# Pull the latest commits.
+# This will apply everyone's changes.
 git pull origin master
 
-# See everyone's commits in the log.
+# You can see everyone's commits in the log.
 git log
 
-# See the commit history graph (with the alias we defined earlier).
+# Check the commit history graph (with the alias you defined earlier).
+# You cannot really see the graph yet because there are few commits
+# in a straight line, but it does show you the state of branches.
+# Remember than in git branches are just pointers to a commit.
+# Since you just pulled the latest changes, your local master branch
+# points to the most recent commit.
+# You can also see HEAD which points to the current commit. That's the
+# same as the commit that master points to, since you are on the master branch.
+git graph
+
+# For some, the origin/master branch will be a few commits behind the
+# master branch. That's because git shows you the last known state of
+# the origin remote, which might have changed since.
+# To get an up-to-date picture, you must "fetch" all changes from the remote.
+# Fetch will get all commits without applying them.
+git fetch origin
+
+# Now origin/master and master should point to the same commit.
 git graph
 ```
 
