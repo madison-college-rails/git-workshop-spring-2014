@@ -193,6 +193,9 @@ git status
 git pull origin master
 
 # You can see everyone's commits in the log.
+# Note that commits are identified by a hash.
+# The hash is a SHA-1 hash based on the contents,
+# author, date and parent of the commit.
 git log
 
 # Check the commit history graph (with the alias you defined earlier).
@@ -284,6 +287,9 @@ git push origin master
 **All students...**
 
 ```bash
+# Pull the latest changes.
+git pull origin master
+
 # Use the branch command to list branches and see which one you are on.
 # By convention, the default branch is the "master" branch.
 git branch
