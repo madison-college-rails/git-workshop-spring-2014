@@ -41,7 +41,7 @@ git add <USERNAME>.txt
 git commit -m "Workshop setup."
 
 # Push your changes.
-git push origin master
+git push
 ```
 
 
@@ -94,7 +94,7 @@ git status
 # Add the file.
 git add <USERNAME>.txt
 
-# You have updated the "index" with the content of the working tree.
+# You have updated the "index" with the contents of your file in the working tree.
 # The file is now "staged" for the next commit.
 git status
 
@@ -104,7 +104,7 @@ git diff
 # To see the changes staged for the next commit, use the --staged option.
 git diff --staged
 
-# Make a change in your file.
+# Make a change to your file.
 echo "Fix problem quickly with galvanized jets." >> <USERNAME>.txt
 
 # Your new changes are untracked.
@@ -122,9 +122,12 @@ git status
 git diff --staged
 ```
 
-*Note to SVN users:* the difference between the working tree and the index doesn't exist in SVN.
-Keep in mind that you must always stage your changes for them to be committed, even for files that are already tracked.
-Before committing, you should always use the `status` command so that you are sure of what is untracked and what is staged.
+*Note to SVN users:*
+the difference between the working tree and the index doesn't exist in SVN.
+Keep in mind that you must always stage your changes for them to be committed,
+even for files that are already tracked.
+Before committing, you should always use the `status` command
+so that you are sure of what is untracked and what is staged.
 
 
 
@@ -141,8 +144,9 @@ git remote
 git remote -v
 ```
 
-*Note to SVN users:* there is no notion of centralized server in git.
-If an organization decides to use a centralized server for simplicity, that is a convention; it is not enforced by git.
+*Note to SVN users:* the notion of centralized server doesn't exist in git.
+If an organization decides to use a centralized server for simplicity,
+that is a convention; it is not enforced by git.
 Any remote repo is indistinguishable from your own at the git level.
 
 
