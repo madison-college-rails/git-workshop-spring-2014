@@ -85,7 +85,7 @@ git log --patch
 
 
 
-# Reverting Changes
+## Reverting Changes
 
 **All students...**
 
