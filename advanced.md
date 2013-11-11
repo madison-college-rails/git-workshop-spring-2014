@@ -6,6 +6,7 @@ of your repository with a clean working tree and index.
 
 * [Stashing](#stashing)
 * [Interactive Add](#interactive-add)
+* [Reverting Changes](#reverting-changes)
 
 
 
@@ -50,4 +51,46 @@ git commit -m "Feature."
 
 # Then you can add the rest of the changes and commit the bugfix.
 git commit -a -m "Bugfix."
+```
+
+
+
+# Reverting Changes
+
+**All students...**
+
+```bash
+# Commit a file.
+echo "All questions asked by five watched experts amaze the judge." > reverting.txt
+git add reverting.txt
+git commit -m "Reverting sample file."
+
+# Commit a change to this file.
+echo "A quick movement of the enemy will jeopardize six gunboats." >> reverting.txt
+git commit -a -m "Bad change."
+
+# Push this change to the remote repo.
+git push origin master
+
+# The commit you have pushed is now part of the history so you can't
+# remove it with a soft or hard reset. You have to create a new commit
+# which cancels your change. You can also do this with the reset command.
+git reset HEAD~1
+
+# This has applied the state of the previous commit to the index.
+git status
+git diff --staged
+
+# Note that it leaves the working tree untouched,
+# so the changes of your last commit are still there.
+git diff
+
+# You can commit.
+git commit -m "Reverted latest changes."
+
+# Get rid of the reverted changes.
+git reset --hard
+
+# The contents of the file are now the same as before your second commit.
+cat reverting.txt
 ```
