@@ -69,6 +69,17 @@ cat ~/.gitconfig
 
 
 
+## Cloning
+
+**All students...**
+
+```bash
+# Get a copy of the workshop repository.
+git clone git@github.com:lotaris/<WORKSHOP>.git
+```
+
+
+
 ## Remotes
 
 **All students...**
@@ -90,17 +101,6 @@ git remote add origin git@github.com:lotaris/<WORKSHOP>.git
 If an organization decides to use a centralized server,
 that is a convention; it is not enforced by git.
 Any remote repo is indistinguishable from your own at the git level.
-
-
-
-## Cloning
-
-**All students...**
-
-```bash
-# Get a copy of the workshop repository.
-git clone git@github.com:lotaris/<WORKSHOP>.git
-```
 
 
 
