@@ -54,7 +54,7 @@ git push
 **All students...**
 
 ```bash
-# Set up your user name and e-mail address.
+# Set up your name (your full name by convention) and e-mail address.
 # This information will be immutably included into every commit you make.
 # If you want different user info for a repository, omit the --global option.
 git config --global user.name "John Doe"
