@@ -13,27 +13,44 @@ of your repository with a clean working tree and index.
 ## Stashing
 
 ```bash
-# If you have uncommitted changes on a branch and you need to switch
-# to another branch, you can "stash" these changes into a temporary workspace.
+# Make staged and unstaged changes.
+echo "The job of waxing linoleum frequently peeves chintzy kids." > stashing.txt
+git add stashing.txt
+echo "Back in June we delivered oxygen equipment of the same size." >> stashing.txt
+git status
+
+# Let's say you have to switch to another branch to work on something else.
+# You have uncommitted changes which could conflict with that branch.
+# "Stashing" saves your local modifications to a temporary dirty space and
+# leaves you with a clean state.
 git stash
 
-# Your working tree and index are now clean and you can switch branches.
-git checkout other-branch
+# Your working tree and index are now clean.
+git status
+
+# You can switch branches.
+git checkout -b other-branch
 
 # Once you're done with your work, switch back to the original branch.
-git checkout original-branch
+git checkout master
 
-# Re-apply stashed changes.
+# Re-apply the changes you stashed earlier.
 git stash apply
+
+# You can stash multiple sets of changes and manage your stashes.
+git help stash
 ```
 
 
 
 ## Interactive Add
 
-Download [`interactive.txt`](interactive.txt) into your repo and commit it.
-
 ```bash
+# Download and commit the sample interactive.txt file into your repo.
+curl -o interactive.txt https://raw.github.com/lotaris/git-workshop/master/interactive.txt
+git add interactive.txt
+git commit -m "Interactive add sample file."
+
 # Make one change in each paragraph of the file.
 vim interactive.txt
 
