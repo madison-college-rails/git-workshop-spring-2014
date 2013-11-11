@@ -603,19 +603,6 @@ git reset --soft HEAD~1
 git status
 ```
 
-**All students...**
-
-```bash
-# Commit it again.
-git commit -m "More text."
-
-# If you have pushed it, it is now part of the history so you can't
-# remove it. You have to create a new commit which cancels your change.
-# You can also do this with the reset command.
-git reset HEAD~1
-
-# This will apply the state of the previous commit to the working tree and index.
-# You can commit this and push it to the remote repo to cancel your change.
-git status
-git diff --staged
-```
+Soft and hard resets can modify the commit history,
+so they should only be used for uncommitted or unpushed changes.
+To revert commits that have already been pushed, see [reverting changes (advanced)](advanced.md#reverting-changes).
