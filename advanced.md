@@ -10,6 +10,16 @@ of your repository with a clean working tree and index.
 
 
 
+# Setup
+
+Create a repository with your GitHub account and clone it.
+
+```bash
+git clone git@github.com:<YOUR_USERNAME>/<YOUR_REPO>.git
+```
+
+
+
 ## Stashing
 
 ```bash
@@ -68,6 +78,9 @@ git commit -m "Feature."
 
 # Then you can add the rest of the changes and commit the bugfix.
 git commit -a -m "Bugfix."
+
+# You can see that you have committed both sets of changes separately.
+git log --patch
 ```
 
 
