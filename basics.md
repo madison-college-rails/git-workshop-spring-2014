@@ -54,10 +54,10 @@ git push
 **All students...**
 
 ```bash
-# Set up your name (your full name by convention) and e-mail address.
+# Set up your name and e-mail address.
 # This information will be immutably included into every commit you make.
 # If you want different user info for a repository, omit the --global option.
-git config --global user.name "John Doe"
+git config --global user.name "John Doe" # This should be your full name.
 git config --global user.email johndoe@example.com
 
 # Set up this alias for the workshop.
@@ -251,6 +251,7 @@ git commit -m "Updated <USERNAME>"
 
 ```bash
 # Commit a change to your file.
+git pull origin master
 echo "Five jumping wizards hex bolty quick." >> <USERNAME>.txt
 git commit -a -m "I am <USERNAME>."
 
@@ -336,6 +337,7 @@ Switching between branches is also fast because only the differences have to be 
 
 ```bash
 # Commit a change to your file.
+git pull origin master
 echo "Five quacking zephyrs jolt my wax bed." >> <USERNAME>.txt
 git add <USERNAME>.txt
 git commit -m "Updated my file."
@@ -384,8 +386,8 @@ git branch -d <USERNAME>-branch
 # Update your local repo.
 git fetch origin
 
-# You can see that all user branches have been deleted.
-git branch -a
+# You can see that your local branch has been deleted.
+git branch
 ```
 
 
@@ -397,6 +399,7 @@ git branch -a
 ```bash
 # Create a branch for everyone to work in.
 git checkout master
+git pull origin master
 git branch feature-shared
 git push origin feature-shared
 ```
@@ -407,7 +410,7 @@ git push origin feature-shared
 # Fetch all branches from the remote repo.
 git fetch origin
 
-# You can see all the branches that were pushed.
+# You can see all the branches that are on the remote.
 git branch -a
 
 # Switch to the shared branch.
@@ -486,7 +489,7 @@ git push origin master
 **All students...**
 
 ```bash
-# Switch back to the master branch
+# Switch back to the master branch. DO NOT pull the latest changes.
 git checkout master
 
 # In your file, add a word at the end of the first line. Save and commit your change.
@@ -502,8 +505,10 @@ git push origin master
 **Each student in turn...**
 
 ```bash
-# You want to get the latest changes of the master branch and rebase your commit.
-git pull --rebase
+# Usually you want to pull the latest changes and then rebase your own.
+# The --rebase option of the pull command does just that.
+# Get the latest changes of the master branch with a rebase.
+git pull --rebase origin master
 
 # Oops. You're now in a conflicted state because your file was changed by someone else.
 # Find the conflict markers in your file and resolve the conflict.
@@ -523,9 +528,16 @@ git push origin master
 
 ## Amending Commits
 
+When you notice a mistake in your last commit, you can *amend* it before pushing it to a remote.
+You can modify the contents, commit message, author, or any other commit information.
+Keep in mind that amending works only for the last unpushed commit.
+
 **All students...**
 
 ```bash
+# Make sure you are up to date.
+git pull origin master
+
 # Commit a change with a mistake in your file.
 echo "Blowzy red vixens fight for a quick jummp." >> <USERNAME>.txt
 git add <USERNAME>.txt
@@ -537,6 +549,7 @@ vim <USERNAME>.txt
 git add <USERNAME>.txt
 
 # Then "amend" the last commit.
+# Instead of creating a new commit, this changes the last one.
 # Your commit is now fixed, ready to be pushed.
 git commit --amend -m "More texxt."
 
