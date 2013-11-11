@@ -87,8 +87,6 @@ git log --patch
 
 ## Reverting Changes
 
-**All students...**
-
 ```bash
 # Commit a file.
 echo "All questions asked by five watched experts amaze the judge." > reverting.txt
