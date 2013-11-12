@@ -26,6 +26,9 @@ Placeholders like `<USERNAME>` must be filled out when typing commands.
 * [Amending Commits](#amending-commits)
 * [Resetting Changes](#resetting-changes)
 
+Students are encouraged to **not** just copy/paste the git commands into the shell but type them entirely. For once, 
+your brain will soak it up more easily when your fingers actually type the command. Secondly, the commands will
+become your daily bread and butter so you will need learn them by heart anyway eventually.
 
 
 ## Setup
