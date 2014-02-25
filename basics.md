@@ -386,9 +386,6 @@ git branch -d <USERNAME>-branch
 **All students...**
 
 ```bash
-# Update your local repo.
-git fetch origin
-
 # You can see that your local branch has been deleted.
 git branch
 ```
