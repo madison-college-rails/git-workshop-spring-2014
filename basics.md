@@ -79,6 +79,9 @@ cat ~/.gitconfig
 ```bash
 # Get a copy of the workshop repository.
 git clone git@github.com:lotaris/<WORKSHOP>.git
+
+# Go into the repository.
+cd <WORKSHOP>
 ```
 
 
