@@ -1,1 +1,2 @@
 The quick brown fox jumps over the lazy dog.
+Quizzical twins proved my hijack-bug fix.
