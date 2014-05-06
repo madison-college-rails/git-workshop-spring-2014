@@ -1,4 +1,8 @@
-The kciuq brown fox jumps over the lazy dog.
+<<<<<<< HEAD
+The quick brown fox jumps over the lazy dog.
+=======
+The quick brown fox jumps over the lazy dog.  What a lazy dog.
+>>>>>>> Fixing things
 Fix problem quickly with galvanized jets.
 Quizzical twins proved my hijack-bug fix.
 Quizzical twins proved my hijack-bug fix.
